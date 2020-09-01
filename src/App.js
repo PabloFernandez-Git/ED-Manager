@@ -1,6 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import Jugadores from './components/Jugadores';
+import EquipoSeleccionado from './components/EquipoSeleccionado';
 
 
 const App = () => (
