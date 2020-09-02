@@ -7,9 +7,9 @@ const Suplentes = ({suplentes}) => (
         <div className="suplentes">
             {
                 suplentes.map(jugador => (
-                    <article className="suplente">
+                    <article className="suplente" key={jugador.id}>
                         <div>
-                            <img src={jugador.goto} alt={jugador.nombre} />
+                            <img src={jugador.foto} alt={jugador.nombre} />
                             <button>X</button>
                         </div>
                         <p>{jugador.nombre}</p>
