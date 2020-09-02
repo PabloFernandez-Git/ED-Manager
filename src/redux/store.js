@@ -1,4 +1,5 @@
 import { createStore } from 'redux'
+import { act } from 'react-dom/test-utils'
 
 const initialState = {
     jugadores: [
@@ -43,6 +44,14 @@ const reducerEntrenador = (state = initialState, action) => {
         return {
             ...state,
             titulares: state.titulares.filter(jugador => jugador.id !== action.jugador.id),
+            jugadores: state.jugadores.concat(action.jugador)
+        }
+    }
+
+    if (action.type === "QUITAR_SUPLENTE") {
+        return {
+            ...state,
+            suplentes: state.suplentes.filter(jugador => jugador.id !== action.jugador.id),
             jugadores: state.jugadores.concat(action.jugador)
         }
     }
