@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { quitarSuplente as quitarSuplenteAction } from '../redux/action';
+
 
 const Suplentes = ({ suplentes, quitarSuplente }) => (
     <section>
@@ -25,11 +27,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
+    
     quitarSuplente(jugador) {
-        dispatch({
-            type: "QUITAR_SUPLENTE",
-            jugador
-        })
+        dispatch(quitarSuplenteAction(jugador))
     }
 })
 

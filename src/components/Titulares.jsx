@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import cancha from '../cancha.svg';
+import { quitarTitular as quitarTitularAction } from '../redux/action';
 
 
 const Titulares = ({ titulares, quitarTitular }) => (
@@ -28,11 +29,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
+
     quitarTitular(jugador) {
-        dispatch({
-            type: "QUITAR_TITULAR",
-            jugador
-        })
+        dispatch(quitarTitularAction(jugador))
     }
 })
 
