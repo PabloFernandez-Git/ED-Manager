@@ -1,5 +1,8 @@
 import React, { useEffect, createRef } from 'react';
 import { connect } from 'react-redux';
+import { agregarTitular as agregarTitularAction } from '../redux/action';
+import { agregarSuplente as agregarSuplenteAction } from '../redux/action';
+
 
 const Jugadores = ({ jugadores, agregarTitular, agregarSuplente }) => {
   
@@ -67,17 +70,12 @@ const mapStateToProps = state => ({
 // Funciones que se convierten en propiedades
 // Este tipo de funciones son las encargadas de llevar las acciones que van a ser leidas por el reducer para poder cambiar el estado
 const mapDispatchToProps = dispatch => ({
+
     agregarTitular(jugador){
-        dispatch({
-            type: "AGREGAR_TITULAR",
-            jugador
-        })
+        dispatch(agregarTitularAction(jugador))
     },
     agregarSuplente(jugador) {
-        dispatch({
-            type: "AGREGAR_SUPLENTE",
-            jugador
-        })
+        dispatch(agregarSuplenteAction(jugador))
     }
 })
 
